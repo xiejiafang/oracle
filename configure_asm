@@ -1,0 +1,11 @@
+1.add disk:
+	fdisk /dev/...
+2.add raw:
+	#vi /etc/udev/rules.d/60-raw.rules
+	ACTION=="add", KERNEL=="sdb", RUN+="/bin/raw /dev/raw/raw11 %N"
+	#vi /etc/udev/rules.d/99-fuse.rules  
+	KERNEL=="raw1*", MODE="0644",OWNER="oracle",GROUP="oinstall"
+	#start_udev
+3.asmca:
+4.add a line in env file which may call .grid11g:
+export ORACLE_SID=+ASM
